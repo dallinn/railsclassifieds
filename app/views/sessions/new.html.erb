@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">Log in</div>
+    <div class="panel-body">
+      <%= form_for(:session, url: login_path) do |f| %>
+      
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      
+      <%= f.label :remember_me do %>
+      <%= f.check_box :remember_me %>
+        <span>Remember me on this computer</span>
+      <% end %>
+      <br>
+      <%= f.submit "Log in", class: "btn btn-primary btn-block" %>
+    <% end %>
+    
+    <p>New user? <%= link_to "Sign up now!", '/register' %></p>
+    </div>
+  </div>
+    
+  </div>
+</div>
+

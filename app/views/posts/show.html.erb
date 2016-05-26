@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+	<h1><%= @post.title %></h1>
+	<h4>
+	<%= number_to_currency(@post.price) %> - Created On: 
+	<%= @post.created_at.strftime("%B %e") %> 
+
+	<% unless @post.updated_at.strftime("%B %e") == @post.created_at.strftime("%B %e") %>
+	| Last Modified: <%= @post.updated_at.strftime("%B %e") %>
+	<% end %>
+	</h4>
+	<hr>
+
+	<div class="col-md-8">
+		<p><%= @post.body %></p>
+	</div>
+
+	<div class="col-md-4">
+		<div style='border:5px solid navy;width:350px;height:350px;'><p style="color:red;">Photo functionality coming soon!</p></div>
+	</div>
+</div>
+<%= link_to '<< back to all posts', posts_path %>
