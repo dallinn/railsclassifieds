@@ -1,1 +1,37 @@
-HOME
+<div class="row">
+    <div class="col-md-12">
+        <div class="jumbotron">
+          <h1>Classifieds</h1>
+          <p class="lead">An online classifieds board for buying and selling stuff built with Ruby on Rails.</p>
+          <p>
+          <a class="btn btn-primary btn-lg" href="{{ url('all') }}" role="button">View Listings</a>
+          <a class="btn btn-primary btn-lg" href="{{ url('create') }}" role="button">Sell your stuff</a>
+          </p>
+        </div>
+    </div>
+</div> <!-- end of header .row -->
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Categories</h2>
+        <a href="#">Automotive</a><br>
+        <a href="#">Hunting and Outdoors</a><br>
+        <a href="#">Furniture</a><br>
+        <a href="#">Computers and Electronics</a>
+    </div>
+
+    <div class="col-md-8">    
+        <h2>Recent listings</h2>
+        <div class="row">
+
+          foreach post
+            <div class="col-md-4">
+              <h4>title</h4>
+              <p>desc</p>
+              <a class="btn btn-success" href="listing/postid">Expand</a>
+            </div>
+          @endforeach   
+
+        </div>   
+    </div>            
+</div>
