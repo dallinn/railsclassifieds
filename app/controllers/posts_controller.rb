@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   def show
     @post = Post.find(params[:id])
+    @user = User.find(@post.user_id)
   end
 
   def new
@@ -53,6 +54,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :category, :price, :body )
+      params.require(:post).permit(:title, :category, :price, :body).merge(user_id: current_user.id)
     end
 end
